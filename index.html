@@ -3,24 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OneKey Perps Alpha Arena — $800 USDT Prize Pool</title>
+<title>OneKey Perps Alpha Arena — Trading Competition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --black:  #0a0a0a;
-  --g7:     #444;
-  --g5:     #888;
-  --g3:     #ccc;
-  --g1:     #f5f5f5;
-  --white:  #fff;
-  --green:  #00d18c;
-  --gbg:    #f0fdf8;
-  --gborder:#b6f0dd;
-  --border: #e8e8e8;
-  --r:      12px;
-  --sans:   'Inter', -apple-system, sans-serif;
+  --black: #0a0a0a; --g7: #444; --g5: #888; --g3: #ccc; --g1: #f5f5f5;
+  --white: #fff; --green: #00d18c; --gbg: #f0fdf8; --border: #e8e8e8;
+  --sans: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--white); color: var(--black); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -32,107 +23,99 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-size: 14px; color: var(--g5); text-decoration: none; font-weight: 500; transition: color .15s; }
 .nav-links a:hover { color: var(--black); }
-.nav-cta { background: var(--green); color: var(--black); font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: opacity .15s; }
+.nav-cta { background: var(--green); color: var(--black); font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 100px; text-decoration: none; }
 .nav-cta:hover { opacity: .85; }
 
 /* HERO */
-.hero { padding: 80px 40px 72px; text-align: center; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 300px; background: radial-gradient(ellipse at center bottom, #e6faf4 0%, transparent 68%); pointer-events: none; }
-.hero-kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--gbg); border: 1px solid var(--gborder);
-  border-radius: 100px; padding: 5px 14px;
-  font-size: 12px; font-weight: 600; color: var(--black);
-  margin-bottom: 24px; letter-spacing: .01em;
-}
-.kicker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-.breadcrumb { font-size: 13px; color: var(--g5); margin-bottom: 16px; }
+.hero { padding: 88px 40px 72px; text-align: center; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 260px; background: radial-gradient(ellipse at center bottom, #e6faf4 0%, transparent 68%); pointer-events: none; }
+.breadcrumb { font-size: 13px; color: var(--g5); margin-bottom: 24px; }
 .breadcrumb span { color: var(--g3); margin: 0 4px; }
-.hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 900; letter-spacing: -2.5px; line-height: 1.05; color: var(--black); max-width: 820px; margin: 0 auto 16px; }
-.hero h1 .accent { color: var(--green); }
+.hero-tag { display: inline-flex; align-items: center; gap: 7px; background: var(--gbg); border: 1px solid #b6f0dd; border-radius: 100px; padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 24px; }
+.hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 900; letter-spacing: -2.5px; line-height: 1.05; color: var(--black); max-width: 820px; margin: 0 auto 18px; }
 .hero-desc { font-size: 17px; color: var(--g5); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
-.hero-btns { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 56px; position: relative; z-index: 1; }
-.btn-p { background: var(--green); color: var(--black); font-size: 15px; font-weight: 700; padding: 13px 28px; border-radius: 100px; text-decoration: none; transition: opacity .15s; }
+.hero-btns { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 60px; position: relative; z-index: 1; }
+.btn-p { background: var(--green); color: var(--black); font-size: 15px; font-weight: 700; padding: 13px 28px; border-radius: 100px; text-decoration: none; }
 .btn-p:hover { opacity: .85; }
-.btn-s { background: transparent; color: var(--black); font-size: 15px; font-weight: 500; padding: 13px 24px; border-radius: 100px; border: 1.5px solid var(--border); text-decoration: none; transition: border-color .15s; }
+.btn-s { background: transparent; color: var(--black); font-size: 15px; font-weight: 500; padding: 13px 24px; border-radius: 100px; border: 1.5px solid var(--border); text-decoration: none; }
 .btn-s:hover { border-color: var(--g3); }
-
-/* STATS */
 .stats { display: flex; justify-content: center; border-top: 1px solid var(--border); padding-top: 40px; }
-.stat { flex: 1; max-width: 200px; padding: 0 32px; border-right: 1px solid var(--border); text-align: left; }
+.stat { flex: 1; max-width: 200px; padding: 0 28px; border-right: 1px solid var(--border); text-align: left; }
 .stat:last-child { border-right: none; }
-.stat-v { font-size: 30px; font-weight: 900; letter-spacing: -1.2px; margin-bottom: 4px; }
-.stat-v .green { color: var(--green); }
+.stat-v { font-size: 30px; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 4px; }
 .stat-l { font-size: 12px; color: var(--g5); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
 
-/* LAYOUT */
+/* CONTAINER + SECTIONS */
 .w { max-width: 1020px; margin: 0 auto; padding: 0 40px; }
 .sec { padding: 80px 0; border-bottom: 1px solid var(--border); }
 .sec-label { font-size: 12px; font-weight: 600; color: var(--g5); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
-.sec-title { font-size: clamp(22px, 2.5vw, 32px); font-weight: 900; letter-spacing: -.8px; margin-bottom: 10px; }
-.sec-desc { font-size: 15px; color: var(--g5); max-width: 520px; line-height: 1.7; margin-bottom: 44px; }
+.sec-title { font-size: clamp(24px, 2.8vw, 34px); font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+.sec-desc { font-size: 15px; color: var(--g5); max-width: 500px; line-height: 1.7; margin-bottom: 44px; }
 
-/* PRIZE PYRAMID — hero section */
-.pyramid-wrap {
-  margin-bottom: 44px;
-  border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
-}
-.pyramid-head {
-  display: grid; grid-template-columns: 100px 1fr 120px 120px;
-  padding: 10px 24px; background: var(--g1); border-bottom: 1px solid var(--border);
-}
-.pyramid-head span { font-size: 11px; font-weight: 600; color: var(--g5); text-transform: uppercase; letter-spacing: .06em; }
-.p-row {
-  display: grid; grid-template-columns: 100px 1fr 120px 120px;
-  padding: 14px 24px; border-bottom: 1px solid var(--border);
-  align-items: center; transition: background .12s;
-}
-.p-row:last-child { border-bottom: none; }
-.p-row:hover { background: var(--g1); }
-.p-row.top1 { background: var(--gbg); }
-.p-rank { font-size: 13px; font-weight: 700; }
-.p-share { font-size: 13px; color: var(--g5); }
-.p-each { font-size: 14px; font-weight: 600; color: var(--g7); }
-.p-prize { font-size: 16px; font-weight: 900; letter-spacing: -.4px; }
-.p-bar-wrap { grid-column: 1/-1; padding: 0 24px 14px; }
-.p-bar-track { height: 3px; background: var(--border); border-radius: 2px; }
-.p-bar-fill { height: 100%; border-radius: 2px; background: var(--green); }
+/* DYNAMIC POOL */
+.pool-tiers { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+.pool-tier { background: var(--white); padding: 28px 22px; position: relative; transition: background .15s; }
+.pool-tier:hover { background: var(--g1); }
+.pool-tier.target { background: var(--gbg); }
+.pool-tier-label { font-size: 11px; font-weight: 700; color: var(--g5); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+.pool-tier.target .pool-tier-label { color: var(--green); }
+.pool-tier-vol { font-size: 13px; font-weight: 600; color: var(--g5); margin-bottom: 8px; }
+.pool-tier.target .pool-tier-vol { color: var(--black); }
+.pool-tier-amount { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; color: var(--black); margin-bottom: 4px; }
+.pool-tier.target .pool-tier-amount { color: var(--green); }
+.pool-tier-sub { font-size: 12px; color: var(--g5); }
+.pool-target-badge { display: inline-block; font-size: 10px; font-weight: 700; background: var(--green); color: var(--black); padding: 2px 8px; border-radius: 100px; margin-bottom: 10px; letter-spacing: .04em; }
+.pool-note { display: flex; gap: 10px; padding: 14px 18px; background: var(--g1); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--g7); line-height: 1.6; }
+.pool-note strong { color: var(--black); }
 
-/* MECHANIC CARDS */
-.mechs { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-.mech { background: var(--white); padding: 32px 26px; transition: background .15s; }
-.mech:hover { background: var(--g1); }
-.mech-track { font-size: 11px; font-weight: 700; color: var(--g5); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
-.mech-t { font-size: 18px; font-weight: 900; letter-spacing: -.4px; margin-bottom: 8px; }
-.mech-sub { font-size: 13px; color: var(--g5); line-height: 1.6; margin-bottom: 22px; }
-.mech-items { display: flex; flex-direction: column; gap: 10px; }
-.mi { display: flex; gap: 10px; align-items: flex-start; }
-.mi-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--black); flex-shrink: 0; margin-top: 7px; }
-.mi-txt { font-size: 13px; color: var(--g7); line-height: 1.5; }
-.mi-txt strong { color: var(--black); font-weight: 600; }
-.tag { display: inline-block; font-size: 11px; font-weight: 600; background: var(--gbg); color: var(--black); border: 1px solid var(--gborder); padding: 1px 7px; border-radius: 4px; margin-left: 4px; }
+/* PRIZE TABLE */
+.prize-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.prize-head { display: grid; grid-template-columns: 140px 1fr 120px 120px; padding: 10px 22px; background: var(--g1); border-bottom: 1px solid var(--border); }
+.prize-head span { font-size: 11px; font-weight: 600; color: var(--g5); text-transform: uppercase; letter-spacing: .06em; }
+.prize-row { display: grid; grid-template-columns: 140px 1fr 120px 120px; padding: 16px 22px; border-bottom: 1px solid var(--border); align-items: center; transition: background .12s; }
+.prize-row:last-child { border-bottom: none; }
+.prize-row:hover { background: var(--g1); }
+.prize-row.p1 { background: var(--gbg); }
+.prize-rank { font-size: 14px; font-weight: 700; color: var(--black); }
+.prize-pct { font-size: 22px; font-weight: 900; letter-spacing: -1px; color: var(--black); }
+.prize-each { font-size: 13px; color: var(--g5); }
+.prize-tier { font-size: 13px; color: var(--g7); }
+.prize-tier strong { color: var(--green); font-weight: 700; }
 
-/* STEPS */
-.steps { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-.step { padding: 28px 22px; border-right: 1px solid var(--border); transition: background .15s; }
-.step:last-child { border-right: none; }
-.step:hover { background: var(--g1); }
-.step-n { font-size: 11px; font-weight: 600; color: var(--g3); letter-spacing: .08em; margin-bottom: 20px; }
-.step-t { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
-.step-d { font-size: 13px; color: var(--g5); line-height: 1.6; }
+/* ENTRY TIERS */
+.entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.entry-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.entry-card.main { border-color: var(--black); }
+.entry-head { padding: 20px 24px; border-bottom: 1px solid var(--border); background: var(--g1); }
+.entry-card.main .entry-head { background: var(--black); }
+.entry-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; margin-bottom: 10px; letter-spacing: .05em; }
+.entry-card.main .entry-badge { background: var(--green); color: var(--black); }
+.entry-card.side .entry-badge { background: var(--g1); color: var(--g5); border: 1px solid var(--border); }
+.entry-head h3 { font-size: 18px; font-weight: 900; letter-spacing: -.4px; }
+.entry-card.main .entry-head h3 { color: var(--white); }
+.entry-head p { font-size: 13px; color: var(--g5); margin-top: 4px; }
+.entry-card.main .entry-head p { color: rgba(255,255,255,.5); }
+.entry-body { padding: 22px 24px; }
+.entry-threshold { font-size: 28px; font-weight: 900; letter-spacing: -1px; margin-bottom: 4px; }
+.entry-threshold-label { font-size: 12px; color: var(--g5); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 20px; }
+.entry-items { display: flex; flex-direction: column; gap: 10px; }
+.entry-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--g7); }
+.entry-item::before { content: '—'; color: var(--g3); flex-shrink: 0; }
+.entry-item strong { color: var(--black); font-weight: 600; }
 
 /* LEADERBOARD */
-.lb { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-.lb-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--g1); }
+.lb { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.lb-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 22px; border-bottom: 1px solid var(--border); background: var(--g1); }
 .lb-live { display: flex; align-items: center; gap: 8px; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
 .lb-live-txt { font-size: 12px; font-weight: 600; color: var(--g5); }
-.lb-name-h { font-size: 14px; font-weight: 700; }
+.lb-title-txt { font-size: 14px; font-weight: 700; }
 .lb-timer { font-size: 12px; font-weight: 600; color: var(--g5); background: var(--white); border: 1px solid var(--border); padding: 5px 14px; border-radius: 100px; }
-.lb-cols { display: grid; grid-template-columns: 52px 1fr 150px 120px 110px; padding: 9px 24px; border-bottom: 1px solid var(--border); background: var(--g1); }
+.lb-cols { display: grid; grid-template-columns: 52px 1fr 150px 130px 120px; padding: 9px 22px; border-bottom: 1px solid var(--border); background: var(--g1); }
 .lb-cols span { font-size: 11px; font-weight: 600; color: var(--g5); text-transform: uppercase; letter-spacing: .06em; }
-.lb-row { display: grid; grid-template-columns: 52px 1fr 150px 120px 110px; padding: 14px 24px; border-bottom: 1px solid var(--border); align-items: center; transition: background .12s; }
+.lb-row { display: grid; grid-template-columns: 52px 1fr 150px 130px 120px; padding: 14px 22px; border-bottom: 1px solid var(--border); align-items: center; transition: background .12s; }
 .lb-row:last-child { border-bottom: none; }
 .lb-row:hover { background: var(--g1); }
 .lb-row.r1 { background: var(--gbg); }
@@ -140,46 +123,32 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 .rk.g { color: var(--black); }
 .tr { display: flex; flex-direction: column; gap: 2px; }
 .tr-n { font-size: 14px; font-weight: 600; }
-.tr-a { font-size: 11px; color: var(--g5); font-family: monospace; }
+.tr-a { font-size: 11px; color: var(--g5); font-family: 'SF Mono', monospace; }
 .vol { font-size: 14px; font-weight: 600; }
-.share-pct { font-size: 12px; color: var(--g5); }
-.prize { font-size: 14px; font-weight: 700; text-align: right; }
-.prize.est { font-size: 12px; color: var(--g5); font-weight: 500; }
-.lb-foot { padding: 14px 24px; background: var(--g1); border-top: 1px solid var(--border); }
+.est-prize { font-size: 13px; color: var(--green); font-weight: 600; }
+.prize-final { font-size: 14px; font-weight: 700; text-align: right; color: var(--g3); font-style: italic; }
+.lb-footer { padding: 14px 22px; background: var(--g1); border-top: 1px solid var(--border); }
 .pb-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--g5); font-weight: 500; margin-bottom: 8px; }
 .pb-label strong { color: var(--black); }
 .pb-track { height: 4px; background: var(--border); border-radius: 2px; }
-.pb-fill { height: 100%; width: 0; background: var(--green); border-radius: 2px; transition: width 1.5s ease; }
+.pb-fill { height: 100%; width: 0; background: var(--green); border-radius: 2px; transition: width 1.8s ease; }
+.lb-pool-live { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.lb-pool-label { font-size: 12px; color: var(--g5); font-weight: 500; }
+.lb-pool-val { font-size: 20px; font-weight: 900; letter-spacing: -1px; color: var(--black); }
+.lb-pool-val span { color: var(--green); }
 
-/* TIERS */
-.tiers { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-.tier-hd { display: grid; grid-template-columns: 96px 1fr 1fr 130px; padding: 9px 22px; border-bottom: 1px solid var(--border); background: var(--g1); }
-.tier-hd span { font-size: 11px; font-weight: 600; color: var(--g5); text-transform: uppercase; letter-spacing: .06em; }
-.tier-row { display: grid; grid-template-columns: 96px 1fr 1fr 130px; padding: 16px 22px; border-bottom: 1px solid var(--border); align-items: center; transition: background .12s; }
-.tier-row:last-child { border-bottom: none; }
-.tier-row:hover { background: var(--g1); }
-.tier-row.hl { background: var(--gbg); }
-.t-n { font-size: 13px; font-weight: 700; color: var(--g5); }
-.tier-row.hl .t-n { color: var(--black); }
-.t-v { font-size: 14px; font-weight: 600; }
-.t-d { font-size: 13px; color: var(--g7); }
-.tier-row.hl .t-d { color: var(--black); font-weight: 500; }
-.tbadge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; border: 1px solid var(--border); }
-.bl { color: var(--g5); background: var(--white); }
-.bp { color: #92400e; background: #fffbeb; border-color: #fde68a; }
-.bf { color: var(--black); background: var(--green); border-color: var(--green); }
-.bb { color: #5b21b6; background: #f5f3ff; border-color: #ddd6fe; }
-
-/* INFO BOX */
-.ibox { display: flex; gap: 10px; padding: 16px 20px; background: var(--g1); border: 1px solid var(--border); border-radius: 8px; margin-top: 16px; }
-.ibox p { font-size: 13px; color: var(--g7); line-height: 1.6; }
-.ibox p strong { color: var(--black); font-weight: 600; }
-.ibox.warn { background: #fff5f5; border-color: #fecaca; }
-.ibox.green { background: var(--gbg); border-color: var(--gborder); }
+/* STEPS */
+.steps { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.step { padding: 28px 22px; border-right: 1px solid var(--border); transition: background .15s; }
+.step:last-child { border-right: none; }
+.step:hover { background: var(--g1); }
+.step-n { font-size: 11px; font-weight: 600; color: var(--g3); letter-spacing: .08em; margin-bottom: 18px; }
+.step-t { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.step-d { font-size: 13px; color: var(--g5); line-height: 1.6; }
 
 /* WHY */
 .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-.why-card { padding: 28px; border: 1px solid var(--border); border-radius: var(--r); transition: background .15s, border-color .15s; }
+.why-card { padding: 28px; border: 1px solid var(--border); border-radius: 12px; transition: background .15s, border-color .15s; }
 .why-card:hover { background: var(--g1); border-color: var(--g3); }
 .why-n { font-size: 12px; font-weight: 700; color: var(--g3); letter-spacing: .06em; margin-bottom: 12px; }
 .why-t { font-size: 16px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 8px; }
@@ -187,11 +156,16 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 
 /* RULES */
 .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.rule-card { padding: 28px; border: 1px solid var(--border); border-radius: var(--r); }
+.rule-card { padding: 28px; border: 1px solid var(--border); border-radius: 12px; }
 .rule-card h3 { font-size: 12px; font-weight: 700; color: var(--g5); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; }
 .rule-list { display: flex; flex-direction: column; gap: 11px; }
 .rule-item { display: flex; gap: 10px; font-size: 13px; color: var(--g7); line-height: 1.5; }
 .rule-item::before { content: '—'; color: var(--g3); flex-shrink: 0; }
+
+/* INFO BOX */
+.ibox { display: flex; gap: 10px; padding: 14px 18px; background: var(--g1); border: 1px solid var(--border); border-radius: 8px; margin-top: 16px; font-size: 13px; color: var(--g7); line-height: 1.6; }
+.ibox strong { color: var(--black); font-weight: 600; }
+.ibox.warn { background: #fff5f5; border-color: #fecaca; }
 
 /* FOOTER CTA */
 .fcta { padding: 100px 40px; text-align: center; border-top: 1px solid var(--border); }
@@ -202,38 +176,21 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 footer { padding: 24px 40px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
 footer span { font-size: 13px; color: var(--g5); }
 
-/* LOTTERY CARD */
-.lottery-card {
-  border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
-  margin-top: 20px;
-}
-.lottery-head {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 22px; background: var(--g1); border-bottom: 1px solid var(--border);
-}
-.lottery-head h3 { font-size: 14px; font-weight: 700; }
-.lottery-body { padding: 24px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.lottery-col h4 { font-size: 12px; font-weight: 700; color: var(--g5); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
-.lottery-col .litem { display: flex; gap: 8px; font-size: 13px; color: var(--g7); margin-bottom: 8px; }
-.lottery-col .litem::before { content: '—'; color: var(--g3); flex-shrink: 0; }
-
 @media (max-width: 820px) {
-  .nav { padding: 0 20px; }
-  .nav-links { display: none; }
-  .hero { padding: 60px 20px 48px; }
-  .w { padding: 0 20px; }
+  .nav { padding: 0 20px; } .nav-links { display: none; }
+  .hero { padding: 60px 20px 48px; } .w { padding: 0 20px; }
+  .pool-tiers { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
-  .mechs { grid-template-columns: 1fr; }
+  .entry-grid { grid-template-columns: 1fr; }
   .rules-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .lb-cols,.lb-row { grid-template-columns: 44px 1fr 120px 90px; }
-  .prize { display: none; }
-  .pyramid-head,.p-row { grid-template-columns: 80px 1fr 100px; }
-  .p-prize { display: none; }
+  .prize-head, .prize-row { grid-template-columns: 110px 1fr 100px; }
+  .prize-tier { display: none; }
+  .lb-cols, .lb-row { grid-template-columns: 44px 1fr 120px 100px; }
+  .prize-final { display: none; }
   .stats { flex-wrap: wrap; }
   .stat { min-width: 50%; border-right: none; padding: 12px 0; border-bottom: 1px solid var(--border); }
   footer { flex-direction: column; gap: 8px; text-align: center; }
-  .lottery-body { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -246,9 +203,9 @@ footer span { font-size: 13px; color: var(--g5); }
     OneKey
   </a>
   <div class="nav-links">
-    <a href="#prizes">Prizes</a>
-    <a href="#mechanics">Mechanics</a>
+    <a href="#pool">Prize Pool</a>
     <a href="#leaderboard">Leaderboard</a>
+    <a href="#entry">How to Enter</a>
     <a href="#rules">Rules</a>
   </div>
   <a href="https://app.onekey.so/perps" class="nav-cta">Start Trading</a>
@@ -256,175 +213,106 @@ footer span { font-size: 13px; color: var(--g5); }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-kicker">
-    <div class="kicker-dot"></div>
-    Live — 7-Day Trading Competition
-  </div>
   <div class="breadcrumb">Blog <span>/</span> Campaigns <span>/</span> Alpha Arena</div>
-  <h1>OneKey Perps<br><span class="accent">Alpha Arena</span></h1>
-  <p class="hero-desc">
-    $800 USDT prize pool. Top 20 traders share the rewards.<br>
-    Qualify with $200K volume. The more you trade, the higher you climb.
-  </p>
+  <div style="display:flex;justify-content:center">
+    <div class="hero-tag"><div class="hero-tag-dot"></div> Live Competition — 7 Days Only</div>
+  </div>
+  <h1>OneKey Perps<br>Alpha Arena</h1>
+  <p class="hero-desc">The more the community trades, the bigger the prize pool. Top 20 traders split a pyramid reward — the higher you rank, the more you win.</p>
   <div class="hero-btns">
     <a href="https://app.onekey.so/perps" class="btn-p">Start Trading Now</a>
-    <a href="#prizes" class="btn-s">View Prize Structure</a>
+    <a href="#pool" class="btn-s">View Prize Pool</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="stat-v"><span class="green">$800</span></div><div class="stat-l">Total Prize Pool</div></div>
-    <div class="stat"><div class="stat-v">Top 20</div><div class="stat-l">Paid Rankings</div></div>
-    <div class="stat"><div class="stat-v">$200K</div><div class="stat-l">Qualify Threshold</div></div>
-    <div class="stat"><div class="stat-v">7 Days</div><div class="stat-l">Competition Window</div></div>
+    <div class="stat"><div class="stat-v">$30K</div><div class="stat-l">Max Prize Pool</div></div>
+    <div class="stat"><div class="stat-v">Top 20</div><div class="stat-l">Win Rewards</div></div>
+    <div class="stat"><div class="stat-v">$200K</div><div class="stat-l">Main Entry Threshold</div></div>
+    <div class="stat"><div class="stat-v">7 Days</div><div class="stat-l">Duration</div></div>
   </div>
 </section>
 
-<!-- PRIZE STRUCTURE -->
-<section class="sec" id="prizes">
+<!-- DYNAMIC POOL -->
+<section class="sec" id="pool">
   <div class="w">
-    <div class="sec-label">Prize Distribution</div>
-    <h2 class="sec-title">$800 USDT — Top 20 share the pool</h2>
-    <p class="sec-desc">Pyramid structure. First place takes the biggest cut. Every trader in the top 20 who clears $200K volume gets paid.</p>
+    <div class="sec-label">Prize Pool</div>
+    <h2 class="sec-title">Community trading unlocks the pool</h2>
+    <p class="sec-desc">The prize pool grows with total Perps volume. The more everyone trades, the bigger the reward for every ranked participant.</p>
+    <div class="pool-tiers">
+      <div class="pool-tier">
+        <div class="pool-tier-label">Tier 1</div>
+        <div class="pool-tier-vol">$10M total volume</div>
+        <div class="pool-tier-amount">$3,000</div>
+        <div class="pool-tier-sub">Pool unlocked</div>
+      </div>
+      <div class="pool-tier target">
+        <div class="pool-target-badge">TARGET</div>
+        <div class="pool-tier-label">Tier 2</div>
+        <div class="pool-tier-vol">$30M total volume</div>
+        <div class="pool-tier-amount">$8,000</div>
+        <div class="pool-tier-sub">Pool unlocked</div>
+      </div>
+      <div class="pool-tier">
+        <div class="pool-tier-label">Tier 3</div>
+        <div class="pool-tier-vol">$60M total volume</div>
+        <div class="pool-tier-amount">$18,000</div>
+        <div class="pool-tier-sub">Pool unlocked</div>
+      </div>
+      <div class="pool-tier">
+        <div class="pool-tier-label">Tier 4</div>
+        <div class="pool-tier-vol">$100M total volume</div>
+        <div class="pool-tier-amount">$30,000</div>
+        <div class="pool-tier-sub">Pool unlocked</div>
+      </div>
+    </div>
+    <div class="pool-note">— The prize pool displayed on the leaderboard updates in real time as community volume accumulates. <strong>Every trade you make pushes the pool higher for everyone.</strong></div>
+  </div>
+</section>
 
-    <div class="pyramid-wrap">
-      <div class="pyramid-head">
+<!-- PRIZE DISTRIBUTION -->
+<section class="sec" style="padding-top:0">
+  <div class="w">
+    <div class="sec-label">Distribution</div>
+    <h2 class="sec-title">Pyramid reward structure</h2>
+    <p class="sec-desc">Top 20 traders share the pool. Rank higher, win more. 20th place still earns — no winner-takes-all.</p>
+    <div class="prize-wrap">
+      <div class="prize-head">
         <span>Rank</span>
         <span>Pool Share</span>
-        <span>Each Receives</span>
-        <span>Total Paid</span>
+        <span>At $8K Pool</span>
+        <span>At $30K Pool</span>
       </div>
-      <div class="p-row top1">
-        <div class="p-rank">#1</div>
-        <div>
-          <div class="p-share">20% of pool</div>
-          <div class="p-bar-track" style="width:160px;margin-top:6px"><div class="p-bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="p-each">$160</div>
-        <div class="p-prize">$160</div>
+      <div class="prize-row p1">
+        <div class="prize-rank">1st Place</div>
+        <div><div class="prize-pct">20%</div><div class="prize-each">Winner takes all of this slice</div></div>
+        <div class="prize-tier"><strong>$1,600</strong></div>
+        <div class="prize-tier"><strong>$6,000</strong></div>
       </div>
-      <div class="p-row">
-        <div class="p-rank">#2 – 3</div>
-        <div>
-          <div class="p-share">25% of pool — split equally</div>
-          <div class="p-bar-track" style="width:160px;margin-top:6px"><div class="p-bar-fill" style="width:125%"></div></div>
-        </div>
-        <div class="p-each">$100 each</div>
-        <div class="p-prize">$200</div>
+      <div class="prize-row">
+        <div class="prize-rank">2nd – 3rd</div>
+        <div><div class="prize-pct">30%</div><div class="prize-each">Split equally between 2</div></div>
+        <div class="prize-tier"><strong>$1,200</strong> each</div>
+        <div class="prize-tier"><strong>$4,500</strong> each</div>
       </div>
-      <div class="p-row">
-        <div class="p-rank">#4 – 5</div>
-        <div>
-          <div class="p-share">15% of pool — split equally</div>
-          <div class="p-bar-track" style="width:160px;margin-top:6px"><div class="p-bar-fill" style="width:75%"></div></div>
-        </div>
-        <div class="p-each">$60 each</div>
-        <div class="p-prize">$120</div>
+      <div class="prize-row">
+        <div class="prize-rank">4th – 5th</div>
+        <div><div class="prize-pct">20%</div><div class="prize-each">Split equally between 2</div></div>
+        <div class="prize-tier"><strong>$800</strong> each</div>
+        <div class="prize-tier"><strong>$3,000</strong> each</div>
       </div>
-      <div class="p-row">
-        <div class="p-rank">#6 – 10</div>
-        <div>
-          <div class="p-share">20% of pool — split equally</div>
-          <div class="p-bar-track" style="width:160px;margin-top:6px"><div class="p-bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="p-each">$32 each</div>
-        <div class="p-prize">$160</div>
+      <div class="prize-row">
+        <div class="prize-rank">6th – 10th</div>
+        <div><div class="prize-pct">10%</div><div class="prize-each">Split equally between 5</div></div>
+        <div class="prize-tier"><strong>$160</strong> each</div>
+        <div class="prize-tier"><strong>$600</strong> each</div>
       </div>
-      <div class="p-row">
-        <div class="p-rank">#11 – 20</div>
-        <div>
-          <div class="p-share">20% of pool — split equally</div>
-          <div class="p-bar-track" style="width:160px;margin-top:6px"><div class="p-bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="p-each">$16 each</div>
-        <div class="p-prize">$160</div>
+      <div class="prize-row">
+        <div class="prize-rank">11th – 20th</div>
+        <div><div class="prize-pct">20%</div><div class="prize-each">Split equally between 10</div></div>
+        <div class="prize-tier"><strong>$160</strong> each</div>
+        <div class="prize-tier"><strong>$600</strong> each</div>
       </div>
     </div>
-
-    <div class="ibox green">
-      <p>All rankings are determined by total Perps trading volume. <strong>Minimum $200,000 volume required</strong> to qualify for any prize tier. Rewards are distributed within 48 hours after the event closes.</p>
-    </div>
-
-    <!-- LUCKY DRAW -->
-    <div class="lottery-card" style="margin-top:28px">
-      <div class="lottery-head">
-        <h3>Low-Barrier Lucky Draw — OneKey Merchandise</h3>
-        <span style="font-size:11px;font-weight:600;color:var(--g5);background:var(--white);border:1px solid var(--border);padding:3px 10px;border-radius:100px">Open to All</span>
-      </div>
-      <div class="lottery-body">
-        <div class="lottery-col">
-          <h4>How to Enter</h4>
-          <div class="litem">Minimum $1,000 Perps trading volume</div>
-          <div class="litem">Every $1,000 volume = 1 draw ticket</div>
-          <div class="litem">Missions unlock extra tickets (see below)</div>
-          <div class="litem">No upper limit — more volume, more chances</div>
-        </div>
-        <div class="lottery-col">
-          <h4>Prizes</h4>
-          <div class="litem">OneKey hardware wallet (1 winner)</div>
-          <div class="litem">OneKey branded merchandise sets (5 winners)</div>
-          <div class="litem">Exclusive Alpha Arena winner certificate (all top 20)</div>
-          <div class="litem">Draw held publicly after event closes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="sec" id="how">
-  <div class="w">
-    <div class="sec-label">How It Works</div>
-    <h2 class="sec-title">Four steps to compete</h2>
-    <p class="sec-desc">No sign-up, no KYC. Enter via KOL invite link and start building volume immediately.</p>
-    <div class="steps">
-      <div class="step"><div class="step-n">01</div><div class="step-t">Enter via invite link</div><div class="step-d">Use your KOL's exclusive link. Competition tracking is automatic upon entry.</div></div>
-      <div class="step"><div class="step-n">02</div><div class="step-t">Trade Perps only</div><div class="step-d">Only Perps trading volume counts toward rankings. USDC-settled, on-chain.</div></div>
-      <div class="step"><div class="step-n">03</div><div class="step-t">Clear $200K to qualify</div><div class="step-d">Hit the threshold to enter the prize pool. Every dollar above it counts for rank.</div></div>
-      <div class="step"><div class="step-n">04</div><div class="step-t">Climb and win</div><div class="step-d">The more you trade, the higher you rank. Top 20 all get paid. First place takes the most.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- MECHANICS -->
-<section class="sec" id="mechanics">
-  <div class="w">
-    <div class="sec-label">Competition Structure</div>
-    <h2 class="sec-title">Three tracks, running in parallel</h2>
-    <p class="sec-desc">Volume dominates, but missions and the draw give every participant a path to win.</p>
-    <div class="mechs">
-      <div class="mech">
-        <div class="mech-track">Track 01</div>
-        <div class="mech-t">Volume Leaderboard</div>
-        <div class="mech-sub">The main event. Rank by total Perps volume. Top 20 qualifiers share $800 USDT.</div>
-        <div class="mech-items">
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Ranked by <strong>total Perps trading volume</strong></div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt"><strong>$200,000 minimum</strong> volume to qualify for prizes</div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Every <strong>$10,000 volume</strong> above threshold = +1 draw ticket<span class="tag">+1 ticket</span></div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Leaderboard updates <strong>every 5 minutes</strong></div></div>
-        </div>
-      </div>
-      <div class="mech">
-        <div class="mech-track">Track 02</div>
-        <div class="mech-t">Trading Missions</div>
-        <div class="mech-sub">Bonus draw tickets for consistent trading. Rewards real behavior — not just raw capital.</div>
-        <div class="mech-items">
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Trade <strong>3 consecutive days</strong><span class="tag">+1 ticket</span></div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Complete <strong>10 or more trades</strong><span class="tag">+1 ticket</span></div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Achieve <strong>2 or more profitable days</strong><span class="tag">+1 ticket</span></div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Trade with <strong>leverage 10x or above</strong><span class="tag">+1 ticket</span></div></div>
-        </div>
-      </div>
-      <div class="mech">
-        <div class="mech-track">Track 03</div>
-        <div class="mech-t">Lucky Draw</div>
-        <div class="mech-sub">$1,000 volume gets you in. Hardware wallet and merchandise up for grabs.</div>
-        <div class="mech-items">
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt"><strong>$1,000 minimum</strong> volume — lowest barrier</div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Every $1,000 volume = 1 entry ticket</div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt"><strong>6 prize winners</strong> total — hardware + merch</div></div>
-          <div class="mi"><div class="mi-dot"></div><div class="mi-txt">Draw independent from leaderboard track</div></div>
-        </div>
-      </div>
-    </div>
+    <div class="ibox">— Prizes are denominated in USDT and settled after the event ends. Pool amount is determined by final total trading volume at event close.</div>
   </div>
 </section>
 
@@ -433,91 +321,134 @@ footer span { font-size: 13px; color: var(--g5); }
   <div class="w">
     <div class="sec-label">Live Rankings</div>
     <h2 class="sec-title">Leaderboard</h2>
-    <p class="sec-desc">Updates every 5 minutes. Qualify with $200K Perps volume to appear in the prize pool.</p>
+    <p class="sec-desc">Rankings update in real time. Estimated prizes shown based on current pool unlock level. Final prizes settled at event close.</p>
     <div class="lb">
       <div class="lb-head">
         <div class="lb-live">
           <div class="dot"></div>
           <span class="lb-live-txt">Live</span>
-          <span class="lb-name-h" style="margin-left:4px">Alpha Arena Leaderboard</span>
+          <span class="lb-title-txt">Alpha Arena Leaderboard</span>
         </div>
-        <div class="lb-timer" id="countdown">Ends in 05:14:22</div>
+        <div class="lb-timer" id="countdown">Ends in 06:23:41</div>
       </div>
       <div class="lb-cols">
-        <span>Rank</span><span>Trader</span><span>Perps Volume</span><span>Pool Share</span><span style="text-align:right">Est. Prize</span>
+        <span>Rank</span><span>Trader</span><span>Perps Volume</span><span>Est. Prize</span><span style="text-align:right">Final</span>
       </div>
       <div class="lb-row r1">
         <div class="rk g">#1</div>
         <div class="tr"><div class="tr-n">CryptoWolf</div><div class="tr-a">0x4f3a…2d8e</div></div>
-        <div class="vol">$842,000</div>
-        <div class="share-pct">20%</div>
-        <div class="prize">$160</div>
+        <div class="vol">$1,240,000</div>
+        <div class="est-prize">~$1,600</div>
+        <div class="prize-final">TBD</div>
       </div>
       <div class="lb-row">
         <div class="rk">#2</div>
         <div class="tr"><div class="tr-n">AlphaDesk</div><div class="tr-a">0xc7f9…1a4b</div></div>
-        <div class="vol">$615,000</div>
-        <div class="share-pct">12.5%</div>
-        <div class="prize">$100</div>
+        <div class="vol">$890,000</div>
+        <div class="est-prize">~$1,200</div>
+        <div class="prize-final">TBD</div>
       </div>
       <div class="lb-row">
         <div class="rk">#3</div>
         <div class="tr"><div class="tr-n">DeltaNeutral</div><div class="tr-a">0xbb22…e8f3</div></div>
-        <div class="vol">$459,000</div>
-        <div class="share-pct">12.5%</div>
-        <div class="prize">$100</div>
+        <div class="vol">$610,000</div>
+        <div class="est-prize">~$1,200</div>
+        <div class="prize-final">TBD</div>
       </div>
       <div class="lb-row">
         <div class="rk">#4</div>
         <div class="tr"><div class="tr-n">GammaPulse</div><div class="tr-a">0x22d4…c5a1</div></div>
-        <div class="vol">$380,000</div>
-        <div class="share-pct">7.5%</div>
-        <div class="prize">$60</div>
+        <div class="vol">$420,000</div>
+        <div class="est-prize">~$800</div>
+        <div class="prize-final">TBD</div>
       </div>
       <div class="lb-row">
         <div class="rk">#5</div>
         <div class="tr"><div class="tr-n">SigmaTrader</div><div class="tr-a">0xf0b3…7a2c</div></div>
         <div class="vol">$310,000</div>
-        <div class="share-pct">7.5%</div>
-        <div class="prize">$60</div>
+        <div class="est-prize">~$800</div>
+        <div class="prize-final">TBD</div>
       </div>
       <div class="lb-row">
-        <div class="rk">#6</div>
-        <div class="tr"><div class="tr-n">VegaFlow</div><div class="tr-a">0x8a1c…f3d9</div></div>
-        <div class="vol">$274,000</div>
-        <div class="share-pct">4%</div>
-        <div class="prize">$32</div>
-      </div>
-      <div class="lb-row" style="border-bottom:none">
         <div class="rk" style="color:var(--g3)">...</div>
-        <div class="tr"><div class="tr-n" style="color:var(--g5);font-weight:400">14 more qualifiers</div></div>
+        <div class="tr"><div class="tr-n" style="color:var(--g5);font-weight:400">15 more ranked traders</div></div>
         <div class="vol" style="color:var(--g5)">$200K+</div>
-        <div class="share-pct" style="color:var(--g5)">2% each</div>
-        <div class="prize est">$16 est.</div>
+        <div class="est-prize" style="color:var(--g5)">~$160</div>
+        <div class="prize-final">TBD</div>
       </div>
-      <div class="lb-foot">
-        <div class="pb-label"><span>Community volume toward full pool unlock — <strong>Tier 3</strong></span><span><strong>$2.1M</strong> / $2M target reached</span></div>
+      <div class="lb-footer">
+        <div class="pb-label">
+          <span>Community volume toward <strong>Tier 2 — $8,000 pool</strong></span>
+          <span><strong id="vol-num">$14.2M</strong> / $30M</span>
+        </div>
         <div class="pb-track"><div class="pb-fill" id="pbf"></div></div>
+        <div class="lb-pool-live">
+          <div class="lb-pool-label">Current prize pool (live)</div>
+          <div class="lb-pool-val">$<span>3,780</span> <span style="font-size:14px;font-weight:500;color:var(--g5)">USDT — growing</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- UNLOCK TIERS -->
+<!-- HOW TO ENTER -->
+<section class="sec" id="entry">
+  <div class="w">
+    <div class="sec-label">How to Enter</div>
+    <h2 class="sec-title">Two ways to participate</h2>
+    <p class="sec-desc">Main competition for serious traders. Merch draw for everyone else. Both run simultaneously.</p>
+    <div class="entry-grid">
+      <div class="entry-card main">
+        <div class="entry-head">
+          <div class="entry-badge">Main Competition</div>
+          <h3>Leaderboard — Split the Pool</h3>
+          <p>Rank in the top 20 and claim your share of the prize pool</p>
+        </div>
+        <div class="entry-body">
+          <div class="entry-threshold">$200,000</div>
+          <div class="entry-threshold-label">Minimum Perps volume to qualify</div>
+          <div class="entry-items">
+            <div class="entry-item">Rank is determined by <strong>total Perps trading volume</strong></div>
+            <div class="entry-item">Top 20 traders split the entire prize pool by pyramid share</div>
+            <div class="entry-item">No cap on volume — the more you trade, the higher you climb</div>
+            <div class="entry-item">Estimated prizes update live as pool grows</div>
+            <div class="entry-item">Final settlement in USDT after event closes</div>
+          </div>
+        </div>
+      </div>
+      <div class="entry-card side">
+        <div class="entry-head">
+          <div class="entry-badge">Merch Draw</div>
+          <h3>Low Threshold — OneKey Merch</h3>
+          <p>Trade any amount and enter the hardware wallet lucky draw</p>
+        </div>
+        <div class="entry-body">
+          <div class="entry-threshold">$1,000</div>
+          <div class="entry-threshold-label">Minimum Perps volume to enter draw</div>
+          <div class="entry-items">
+            <div class="entry-item">Every $1,000 volume = 1 draw ticket</div>
+            <div class="entry-item">Prizes: <strong>OneKey Pro hardware wallets</strong> + exclusive merch</div>
+            <div class="entry-item">Open to everyone — including main competition participants</div>
+            <div class="entry-item">More volume = more tickets = better odds</div>
+            <div class="entry-item">Winners announced after event close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
 <section class="sec">
   <div class="w">
-    <div class="sec-label">Unlock Conditions</div>
-    <h2 class="sec-title">Prize pool unlock tiers</h2>
-    <p class="sec-desc">Total community Perps volume determines what gets paid out. Everyone has an incentive to push volume higher.</p>
-    <div class="tiers">
-      <div class="tier-hd"><span>Tier</span><span>Total Volume</span><span>Unlock</span><span>Payout</span></div>
-      <div class="tier-row"><div class="t-n">Tier 1</div><div class="t-v">Below $500K</div><div class="t-d">No rewards distributed</div><span class="tbadge bl">Locked</span></div>
-      <div class="tier-row"><div class="t-n">Tier 2</div><div class="t-v">$500K – $1M</div><div class="t-d">40% of prize pool released</div><span class="tbadge bp">$320 USDT</span></div>
-      <div class="tier-row"><div class="t-n">Tier 3</div><div class="t-v">$1M – $2M</div><div class="t-d">70% of prize pool released</div><span class="tbadge bp">$560 USDT</span></div>
-      <div class="tier-row hl"><div class="t-n">Tier 4</div><div class="t-v">$2M or above</div><div class="t-d">100% of prize pool released</div><span class="tbadge bf">$800 USDT</span></div>
-    </div>
-    <div class="ibox" style="margin-top:16px">
-      <p>ROI logic: $2M total volume &times; 0.045% fee rate = <strong>$900 fee revenue</strong>. This fully covers the $800 prize pool with margin. At $4M volume, fee revenue reaches $1,800 — a <strong>125% ROI</strong> on the prize cost.</p>
+    <div class="sec-label">Process</div>
+    <h2 class="sec-title">Four steps to compete</h2>
+    <p class="sec-desc">No sign-up, no KYC. Enter via KOL invite link and your volume counts immediately.</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><div class="step-t">Enter via invite link</div><div class="step-d">Use your KOL's exclusive link. Volume tracking is automatic from the moment you trade.</div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-t">Trade Perps only</div><div class="step-d">Only Perps trading volume counts toward ranking. USDC-settled, fully on-chain.</div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-t">Climb the leaderboard</div><div class="step-d">Watch your rank update in real time. Hit $200K to qualify. No ceiling on how high you can go.</div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-t">Collect your reward</div><div class="step-d">Prizes settle in USDT after the event ends. Merch draw results announced simultaneously.</div></div>
     </div>
   </div>
 </section>
@@ -526,13 +457,12 @@ footer span { font-size: 13px; color: var(--g5); }
 <section class="sec">
   <div class="w">
     <div class="sec-label">Why Join</div>
-    <h2 class="sec-title">Built for every trader</h2>
-    <p class="sec-desc">Three entry points — whether you trade $1,000 or $1,000,000.</p>
+    <h2 class="sec-title">Built differently</h2>
     <div class="why-grid">
-      <div class="why-card"><div class="why-n">01</div><div class="why-t">20 paid positions, not 3</div><div class="why-d">Most competitions only reward the top 3. Here, every trader who clears $200K and finishes in the top 20 earns real USDT — not just the whales.</div></div>
-      <div class="why-card"><div class="why-n">02</div><div class="why-t">$1,000 gets you in the draw</div><div class="why-d">Can't clear $200K? A single $1,000 trade enters you into the hardware wallet and merch draw. More volume means more tickets.</div></div>
-      <div class="why-card"><div class="why-n">03</div><div class="why-t">No KYC, instant access</div><div class="why-d">Self-custodied, on-chain. Open the OneKey App and start trading — no registration, no identity verification, no waiting.</div></div>
-      <div class="why-card"><div class="why-n">04</div><div class="why-t">Hyperliquid depth</div><div class="why-d">Powered by Hyperliquid L1. 260+ assets, up to 50x leverage, 7&times;24 trading. Deep liquidity — no slippage on size.</div></div>
+      <div class="why-card"><div class="why-n">01</div><div class="why-t">20 winners, not 3</div><div class="why-d">Most competitions only reward the top 3. Here, 20 traders win. 11th place still earns meaningful USDT — the pool is wide enough to compete for.</div></div>
+      <div class="why-card"><div class="why-n">02</div><div class="why-t">Pool grows as you trade</div><div class="why-d">Your volume doesn't just help your rank — it grows the prize pool for everyone. The community has collective incentive to push total volume higher.</div></div>
+      <div class="why-card"><div class="why-n">03</div><div class="why-t">No KYC, no sign-up</div><div class="why-d">Fully on-chain, self-custodied. Connect your wallet in OneKey App and start trading. No identity verification, no registration forms.</div></div>
+      <div class="why-card"><div class="why-n">04</div><div class="why-t">Hyperliquid liquidity</div><div class="why-d">Powered by Hyperliquid L1. 260+ assets, up to 50x leverage, 7×24 trading. Deep liquidity and tight spreads for serious volume.</div></div>
     </div>
   </div>
 </section>
@@ -542,7 +472,7 @@ footer span { font-size: 13px; color: var(--g5); }
   <div class="w">
     <div class="sec-label">Event Details</div>
     <h2 class="sec-title">Rules and fair play</h2>
-    <p class="sec-desc">Read before you trade. All rules are enforced on-chain where possible.</p>
+    <p class="sec-desc">Violations result in immediate disqualification and forfeiture of rewards.</p>
     <div class="rules-grid">
       <div class="rule-card">
         <h3>Event Info</h3>
@@ -550,10 +480,10 @@ footer span { font-size: 13px; color: var(--g5); }
           <div class="rule-item">Duration: 7 days</div>
           <div class="rule-item">Eligible trades: Perps only</div>
           <div class="rule-item">Entry: via KOL invite link</div>
-          <div class="rule-item">Leaderboard qualifier threshold: $200,000 volume</div>
-          <div class="rule-item">Lucky draw entry threshold: $1,000 volume</div>
           <div class="rule-item">Settlement currency: USDC</div>
-          <div class="rule-item">Rewards distributed within 48 hours post-event</div>
+          <div class="rule-item">Leaderboard threshold: $200,000 Perps volume</div>
+          <div class="rule-item">Merch draw threshold: $1,000 Perps volume</div>
+          <div class="rule-item">Prizes distributed within 7 days of event close</div>
         </div>
       </div>
       <div class="rule-card">
@@ -561,28 +491,25 @@ footer span { font-size: 13px; color: var(--g5); }
         <div class="rule-list">
           <div class="rule-item">Wash trading is strictly prohibited</div>
           <div class="rule-item">Multi-account abuse leads to disqualification</div>
-          <div class="rule-item">Only Perps volume is counted — spot excluded</div>
-          <div class="rule-item">Leaderboard updates every 5 minutes</div>
-          <div class="rule-item">Prize pool unlocks based on total community volume</div>
-          <div class="rule-item">OneKey reserves final interpretation rights</div>
+          <div class="rule-item">Only Perps trading volume is counted — spot excluded</div>
+          <div class="rule-item">OneKey reserves the right to adjust pool tiers if volume data is anomalous</div>
+          <div class="rule-item">OneKey reserves final interpretation rights over all rules</div>
         </div>
       </div>
     </div>
-    <div class="ibox warn" style="margin-top:16px">
-      <p>Risk notice: All instruments on OneKey Perps are USDC-settled on-chain perpetual contracts tracked via oracle pricing. You do not hold the underlying asset. Perpetuals involve leverage and can result in rapid losses. This page is for informational purposes only and does not constitute investment advice.</p>
-    </div>
+    <div class="ibox warn">— Risk notice: All instruments on OneKey Perps are USDC-settled on-chain perpetual contracts tracked via oracle pricing. You do not hold the underlying asset. Perpetuals involve leverage and can result in rapid losses. This page is for informational purposes only and does not constitute investment advice.</div>
   </div>
 </section>
 
 <!-- FOOTER CTA -->
 <div class="fcta">
   <h2>Ready to compete?</h2>
-  <p>Enter via your KOL invite link. No KYC. No sign-up. $800 USDT pool.</p>
+  <p>Enter via your KOL invite link. No KYC. No sign-up. Start trading now.</p>
   <div class="fcta-btns">
     <a href="https://app.onekey.so/perps" class="btn-p">Start Trading</a>
     <a href="https://onekey.so/download" class="btn-s">Download App</a>
   </div>
-  <div class="fcta-note">app.onekey.so/perps &nbsp;&middot;&nbsp; Powered by Hyperliquid L1</div>
+  <div class="fcta-note">app.onekey.so/perps &nbsp;&middot;&nbsp; Powered by Hyperliquid L1 &nbsp;&middot;&nbsp; No KYC</div>
 </div>
 
 <footer>
@@ -594,11 +521,13 @@ footer span { font-size: 13px; color: var(--g5); }
 window.addEventListener('load', () => {
   setTimeout(() => {
     const f = document.getElementById('pbf');
-    if (f) f.style.width = '100%';
-  }, 400);
+    if (f) f.style.width = '47%';
+  }, 500);
 });
+
+// Countdown
 (function() {
-  const end = Date.now() + (5*3600+14*60+22)*1000;
+  const end = Date.now() + (6*3600 + 23*60 + 41) * 1000;
   setInterval(() => {
     const d = Math.max(0, end - Date.now());
     const h = String(Math.floor(d/3600000)).padStart(2,'0');
@@ -607,6 +536,17 @@ window.addEventListener('load', () => {
     const el = document.getElementById('countdown');
     if (el) el.textContent = `Ends in ${h}:${m}:${s}`;
   }, 1000);
+})();
+
+// Simulate live volume ticking up
+(function() {
+  let vol = 14200000;
+  const target = 30000000;
+  setInterval(() => {
+    vol += Math.floor(Math.random() * 15000 + 5000);
+    const el = document.getElementById('vol-num');
+    if (el) el.textContent = '$' + (vol/1e6).toFixed(1) + 'M';
+  }, 4000);
 })();
 </script>
 </body>
