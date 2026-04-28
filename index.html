@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OneKey Perps Alpha Arena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --black:  #0a0a0a;
-  --g7:     #444;
+  --black:  #1e2235;
+  --g7:     #3d4355;
   --g5:     #888;
   --g3:     #ccc;
   --g1:     #f5f5f5;
   --white:  #fff;
-  --green:  #00d18c;
-  --gbg:    #f0fdf8;
+  --green:  #52f564;
+  --gbg:    #f0fff2;
   --border: #e8e8e8;
   --r: 12px;
-  --sans: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+  --sans: 'DM Sans', -apple-system, 'Helvetica Neue', sans-serif;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--white); color: var(--black); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -65,7 +65,7 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 .hero::after {
   content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
   width: 900px; height: 280px;
-  background: radial-gradient(ellipse at center bottom, #e6faf4 0%, transparent 68%);
+  background: radial-gradient(ellipse at center bottom, #edfff0 0%, transparent 68%);
   pointer-events: none;
 }
 .breadcrumb { font-size: 13px; color: var(--g5); margin-bottom: 28px; }
@@ -163,7 +163,7 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 .tut-dl-sub { font-size: 11px; color: var(--g5); font-weight: 400; }
 .tut-note {
   margin-top: 16px; padding: 12px 16px;
-  background: var(--gbg); border: 1px solid #b6f0dd;
+  background: var(--gbg); border: 1px solid #a3f0b0;
   border-radius: 8px;
   font-size: 12px; color: var(--g7); line-height: 1.55;
 }
@@ -214,13 +214,13 @@ body { background: var(--white); color: var(--black); font-family: var(--sans); 
 .mi-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--black); flex-shrink: 0; margin-top: 7px; }
 .mi-txt { font-size: 13px; color: var(--g7); line-height: 1.5; }
 .mi-txt strong { color: var(--black); font-weight: 600; }
-.tag { display: inline-block; font-size: 11px; font-weight: 600; background: var(--gbg); color: var(--black); border: 1px solid #b6f0dd; padding: 1px 7px; border-radius: 4px; margin-left: 4px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; background: var(--gbg); color: var(--black); border: 1px solid #a3f0b0; padding: 1px 7px; border-radius: 4px; margin-left: 4px; }
 
 /* Lucky Draw threshold banner */
 .draw-threshold {
   display: flex; align-items: center; gap: 12px;
   padding: 14px 18px;
-  background: var(--gbg); border: 1px solid #b6f0dd;
+  background: var(--gbg); border: 1px solid #a3f0b0;
   border-radius: 8px; margin-top: 16px;
 }
 .draw-threshold-amount { font-size: 18px; font-weight: 900; letter-spacing: -.5px; color: var(--black); white-space: nowrap; }
