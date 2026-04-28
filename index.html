@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OneKey Perps Alpha Arena</title>
+<title data-en="OneKey Perps Alpha Arena" data-zh="OneKey 永续合约 Alpha 竞技场">OneKey Perps Alpha Arena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
 <style>
@@ -404,6 +404,58 @@ footer span { font-size: 13px; color: var(--g5); }
   .tut-dl-btns { flex-direction: column; }
   .tut-dl-btn { min-width: auto; }
 }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { position: relative; }
+.lang-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 13px; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent; cursor: pointer;
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  color: var(--black); transition: border-color .15s;
+  white-space: nowrap;
+}
+.lang-btn:hover { border-color: var(--g3); }
+.lang-btn svg { flex-shrink: 0; }
+.lang-btn-arrow {
+  width: 10px; height: 10px; flex-shrink: 0;
+  transition: transform .2s;
+}
+.lang-switcher.open .lang-btn-arrow { transform: rotate(180deg); }
+.lang-dropdown {
+  display: none;
+  position: absolute; top: calc(100% + 8px); right: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  overflow: hidden; min-width: 150px; z-index: 300;
+}
+.lang-switcher.open .lang-dropdown { display: block; }
+.lang-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  font-size: 14px; font-weight: 500; color: var(--black);
+  cursor: pointer; transition: background .12s;
+  border-bottom: 1px solid var(--border);
+}
+.lang-option:last-child { border-bottom: none; }
+.lang-option:hover { background: var(--g1); }
+.lang-option.active { color: var(--green); }
+.lang-option .lang-check {
+  margin-left: auto; color: var(--green);
+  opacity: 0;
+}
+.lang-option.active .lang-check { opacity: 1; }
+
+/* Nav right group */
+.nav-right { display: flex; align-items: center; gap: 10px; }
+
+@media (max-width: 768px) {
+  .lang-btn span.lang-label { display: none; }
+  .lang-btn { padding: 7px 10px; }
+}
 </style>
 </head>
 <body>
@@ -415,36 +467,62 @@ footer span { font-size: 13px; color: var(--g5); }
     <span class="nav-logo-name">OneKey</span>
   </a>
   <div class="nav-links">
-    <a href="#how">How It Works</a>
-    <a href="#mechanics">Mechanics</a>
-    <a href="#rewards">Rewards</a>
-    <a href="#rules">Rules</a>
+    <a href="#how" data-en="How It Works" data-zh="如何参与" data-en="How It Works" data-zh="参与流程">How It Works</a>
+    <a href="#mechanics" data-en="Mechanics" data-zh="竞赛机制">Mechanics</a>
+    <a href="#rewards" data-en="Rewards" data-zh="奖励" data-en="Rewards" data-zh="奖励">Rewards</a>
+    <a href="#rules" data-en="Rules" data-zh="规则">Rules</a>
   </div>
-  <a href="https://app.onekey.so/perps" class="nav-cta">Start Trading</a>
+  <div class="nav-right">
+    <!-- Language switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+        <!-- Globe icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-label" id="langLabel">English</span>
+        <svg class="lang-btn-arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3.5l3 3 3-3"/>
+        </svg>
+      </button>
+      <div class="lang-dropdown" role="menu">
+        <div class="lang-option active" data-lang="en" role="menuitem">
+          English
+          <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg>
+        </div>
+        <div class="lang-option" data-lang="zh" role="menuitem">
+          简体中文
+          <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg>
+        </div>
+      </div>
+    </div>
+    <a href="https://app.onekey.so/perps" class="nav-cta" data-en="Start Trading" data-zh="立即交易" data-en="Start Trading" data-zh="立即交易">Start Trading</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="breadcrumb">Blog <span>/</span> Campaigns <span>/</span> Alpha Arena</div>
-  <h1>OneKey Perps<br>Alpha Arena</h1>
-  <p class="hero-desc">A real trading competition — not a simple fee rebate. Leaderboard, missions, and lucky draw running in parallel.</p>
+  <h1 data-en="OneKey Perps<br>Alpha Arena" data-zh="OneKey 永续合约<br>Alpha 竞技场">OneKey Perps<br>Alpha Arena</h1>
+  <p class="hero-desc" data-en="A real trading competition — not a simple fee rebate. Leaderboard, missions, and lucky draw running in parallel." data-zh="真实的交易竞赛，不只是手续费返还。排行榜、任务和幸运抽奖同步进行。">A real trading competition — not a simple fee rebate. Leaderboard, missions, and lucky draw running in parallel.</p>
   <div class="hero-btns">
-    <a href="https://app.onekey.so/perps" class="btn-p">Start Trading</a>
-    <a href="#mechanics" class="btn-s">View Mechanics</a>
+    <a href="https://app.onekey.so/perps" class="btn-p" data-en="Start Trading" data-zh="立即交易">Start Trading</a>
+    <a href="#mechanics" class="btn-s" data-en="View Mechanics" data-zh="查看机制">View Mechanics</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="stat-v">$195</div><div class="stat-l">Total Prize Pool</div></div>
-    <div class="stat"><div class="stat-v">$220K</div><div class="stat-l">Unlock Threshold</div></div>
-    <div class="stat"><div class="stat-v">3</div><div class="stat-l">Reward Tracks</div></div>
-    <div class="stat"><div class="stat-v">7 Days</div><div class="stat-l">Duration</div></div>
+    <div class="stat"><div class="stat-v">$195</div><div class="stat-l" data-en="Total Prize Pool" data-zh="总奖池">Total Prize Pool</div></div>
+    <div class="stat"><div class="stat-v">$220K</div><div class="stat-l" data-en="Unlock Threshold" data-zh="解锁门槛">Unlock Threshold</div></div>
+    <div class="stat"><div class="stat-v">3</div><div class="stat-l" data-en="Reward Tracks" data-zh="奖励赛道">Reward Tracks</div></div>
+    <div class="stat"><div class="stat-v">7 Days</div><div class="stat-l" data-en="Duration" data-zh="活动时长">Duration</div></div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="sec" id="how">
   <div class="w">
-    <div class="sec-label">How It Works</div>
-    <h2 class="sec-title">Four steps to compete</h2>
+    <div class="sec-label" data-en="How It Works" data-zh="参与流程">How It Works</div>
+    <h2 class="sec-title" data-en="Four steps to compete" data-zh="四步参赛">Four steps to compete</h2>
     <p class="sec-desc">No sign-up, no KYC. Enter via KOL invite link and start earning immediately.</p>
     <div class="steps">
       <div class="step"><div class="step-n">01</div><div class="step-t">Enter via invite link</div><div class="step-d">Use your KOL's exclusive link. Competition tracking is automatic upon entry.</div></div>
@@ -458,8 +536,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- NEW TUTORIAL SECTION -->
 <section class="sec" id="tutorial">
   <div class="w">
-    <div class="sec-label">New to OneKey Perps?</div>
-    <h2 class="sec-title">Get started in minutes</h2>
+    <div class="sec-label" data-en="New to OneKey Perps?" data-zh="第一次使用 OneKey Perps？">New to OneKey Perps?</div>
+    <h2 class="sec-title" data-en="Get started in minutes" data-zh="几分钟即可开始">Get started in minutes</h2>
     <p class="sec-desc">No account, no KYC, no switching apps. Everything lives inside the OneKey App.</p>
     <div class="tutorial-grid">
       <div class="tutorial-steps">
@@ -530,8 +608,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- LEADERBOARD -->
 <section class="sec">
   <div class="w">
-    <div class="sec-label">Live Rankings</div>
-    <h2 class="sec-title">Leaderboard</h2>
+    <div class="sec-label" data-en="Live Rankings" data-zh="实时排名">Live Rankings</div>
+    <h2 class="sec-title" data-en="Leaderboard" data-zh="排行榜">Leaderboard</h2>
     <p class="sec-desc">Rankings update every 5 minutes. Minimum $20,000 Perps volume to qualify.</p>
     <div class="lb">
       <div class="lb-head">
@@ -589,8 +667,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- MECHANICS -->
 <section class="sec" id="mechanics">
   <div class="w">
-    <div class="sec-label">Competition Structure</div>
-    <h2 class="sec-title">Three tracks, running in parallel</h2>
+    <div class="sec-label" data-en="Competition Structure" data-zh="竞赛结构">Competition Structure</div>
+    <h2 class="sec-title" data-en="Three tracks, running in parallel" data-zh="三条赛道，同步进行">Three tracks, running in parallel</h2>
     <p class="sec-desc">Every account size has a path to win. Volume, behavior, or probability — pick your game.</p>
     <div class="mechs">
       <div class="mech">
@@ -635,8 +713,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- REWARDS -->
 <section class="sec" id="rewards">
   <div class="w">
-    <div class="sec-label">Prize Distribution</div>
-    <h2 class="sec-title">Rewards</h2>
+    <div class="sec-label" data-en="Prize Distribution" data-zh="奖励分配">Prize Distribution</div>
+    <h2 class="sec-title" data-en="Rewards" data-zh="奖励">Rewards</h2>
     <p class="sec-desc">Fixed leaderboard prizes and a lucky draw pool. All rewards distributed after the event ends.</p>
     <div class="rew-grid">
       <div class="rew-card">
@@ -658,8 +736,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- TIERS -->
 <section class="sec">
   <div class="w">
-    <div class="sec-label">Unlock Conditions</div>
-    <h2 class="sec-title">Reward unlock tiers</h2>
+    <div class="sec-label" data-en="Unlock Conditions" data-zh="解锁条件">Unlock Conditions</div>
+    <h2 class="sec-title" data-en="Reward unlock tiers" data-zh="奖励解锁阶梯">Reward unlock tiers</h2>
     <p class="sec-desc">Total Perps volume across all participants determines what gets paid out.</p>
     <div class="tiers">
       <div class="tier-hd"><span>Tier</span><span>Total Volume</span><span>Status</span><span>Payout</span></div>
@@ -678,8 +756,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- WHY JOIN -->
 <section class="sec">
   <div class="w">
-    <div class="sec-label">Why Join</div>
-    <h2 class="sec-title">Built for every trader</h2>
+    <div class="sec-label" data-en="Why Join" data-zh="为什么参与">Why Join</div>
+    <h2 class="sec-title" data-en="Built for every trader" data-zh="适合每位交易者">Built for every trader</h2>
     <p class="sec-desc">Multiple paths to win, regardless of account size or trading style.</p>
     <div class="why-grid">
       <div class="why-card"><div class="why-n">01</div><div class="why-t">No KYC, no sign-up</div><div class="why-d">Fully on-chain, self-custodied. Open the OneKey App and trade immediately — no identity verification required.</div></div>
@@ -693,8 +771,8 @@ footer span { font-size: 13px; color: var(--g5); }
 <!-- RULES -->
 <section class="sec" id="rules">
   <div class="w">
-    <div class="sec-label">Event Details</div>
-    <h2 class="sec-title">Rules and fair play</h2>
+    <div class="sec-label" data-en="Event Details" data-zh="活动详情">Event Details</div>
+    <h2 class="sec-title" data-en="Rules and fair play" data-zh="规则与公平竞技">Rules and fair play</h2>
     <p class="sec-desc">Read before you trade. Violation of rules results in disqualification.</p>
     <div class="rules-grid">
       <div class="rule-card">
@@ -728,17 +806,17 @@ footer span { font-size: 13px; color: var(--g5); }
 
 <!-- FOOTER CTA -->
 <div class="fcta">
-  <h2>Ready to compete?</h2>
-  <p>Enter via your KOL invite link. No KYC. No sign-up.</p>
+  <h2 data-en="Ready to compete?" data-zh="准备好参赛了吗？">Ready to compete?</h2>
+  <p data-en="Enter via your KOL invite link. No KYC. No sign-up." data-zh="通过 KOL 邀请链接进入，无需 KYC，无需注册。">Enter via your KOL invite link. No KYC. No sign-up.</p>
   <div class="fcta-btns">
-    <a href="https://app.onekey.so/perps" class="btn-p">Start Trading</a>
-    <a href="https://onekey.so/download" class="btn-s">Download App</a>
+    <a href="https://app.onekey.so/perps" class="btn-p" data-en="Start Trading" data-zh="立即交易">Start Trading</a>
+    <a href="https://onekey.so/download" class="btn-s" data-en="Download App" data-zh="下载 App">Download App</a>
   </div>
   <div class="fcta-note">app.onekey.so/perps &nbsp;&middot;&nbsp; Powered by Hyperliquid L1</div>
 </div>
 
 <footer>
-  <span>OneKey Perps Alpha Arena</span>
+  <span data-en="OneKey Perps Alpha Arena" data-zh="OneKey 永续合约 Alpha 竞技场">OneKey Perps Alpha Arena</span>
   <span>&copy; 2025 OneKey Limited</span>
 </footer>
 
@@ -756,6 +834,58 @@ window.addEventListener('load', () => {
     const el = document.getElementById('countdown');
     if(el) el.textContent = `Ends in ${h}:${m}:${s}`;
   }, 1000);
+})();
+</script>
+
+<script>
+// ── Language switcher ──
+(function() {
+  const switcher = document.getElementById('langSwitcher');
+  const btn      = document.getElementById('langBtn');
+  const label    = document.getElementById('langLabel');
+  const options  = document.querySelectorAll('.lang-option');
+  let current    = 'en';
+
+  // Toggle dropdown
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = switcher.classList.contains('open');
+    switcher.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', !isOpen);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function() {
+    switcher.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+
+  // Select language
+  options.forEach(function(opt) {
+    opt.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const lang = opt.dataset.lang;
+      if (lang === current) { switcher.classList.remove('open'); return; }
+      current = lang;
+      label.textContent = lang === 'en' ? 'English' : '简体中文';
+      options.forEach(function(o) {
+        o.classList.toggle('active', o.dataset.lang === lang);
+      });
+      switcher.classList.remove('open');
+      applyLang(lang);
+    });
+  });
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      const text = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if (el.tagName === 'H1' || el.tagName === 'H2') {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
+    });
+  }
 })();
 </script>
 </body>
