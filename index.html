@@ -456,6 +456,177 @@ footer span { font-size: 13px; color: var(--g5); }
   .lang-btn span.lang-label { display: none; }
   .lang-btn { padding: 7px 10px; }
 }
+
+/* ── HERO REDESIGN ── */
+.hero { padding: 0 0 0; text-align: left; }
+.hero::after { display: none; }
+
+.hero-inner {
+  display: grid; grid-template-columns: 1fr 400px;
+  gap: 0; min-height: 88vh;
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 40px;
+  align-items: center;
+}
+.hero-copy { padding: 80px 48px 80px 0; }
+.hero-live-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--gbg); border: 1px solid #a3f0b0;
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 12px; font-weight: 600; color: #1a7a3a;
+  margin-bottom: 22px;
+}
+.hero-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(82,245,100,0.3);
+  animation: live-pulse 2s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%,100% { box-shadow: 0 0 0 2px rgba(82,245,100,0.3); }
+  50% { box-shadow: 0 0 0 5px rgba(82,245,100,0); }
+}
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 900; letter-spacing: -2.5px; line-height: 1.06;
+  max-width: none; margin: 0 0 18px; text-align: left;
+}
+.hero-desc { font-size: 17px; color: var(--g5); max-width: 440px; margin: 0 0 32px; line-height: 1.7; text-align: left; }
+.hero-btns { justify-content: flex-start; margin-bottom: 20px; }
+.btn-p-lg { font-size: 16px !important; padding: 15px 34px !important; border-radius: 100px !important; }
+.hero-trust {
+  font-size: 12px; color: var(--g5);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.hero-trust-dot { color: var(--g3); }
+
+/* Prize card on the right */
+.hero-prize-card {
+  background: var(--black);
+  border-radius: 20px; padding: 36px 32px;
+  color: var(--white);
+  position: relative; overflow: hidden;
+}
+.hero-prize-card::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,245,100,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-prize-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.hero-prize-amount {
+  font-size: 72px; font-weight: 900; letter-spacing: -4px;
+  line-height: 1; color: var(--green); margin-bottom: 4px;
+}
+.hero-prize-sub {
+  font-size: 12px; color: rgba(255,255,255,0.35);
+  margin-bottom: 28px;
+}
+.hero-prize-rows { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+.hero-prize-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.hero-prize-row:last-child { border-bottom: none; }
+.hero-prize-row-draw { opacity: .7; }
+.hpr-rank { font-size: 13px; color: rgba(255,255,255,0.6); }
+.hpr-amount { font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: -.5px; }
+.hero-prize-threshold {
+  font-size: 11px; color: rgba(255,255,255,0.25);
+  padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.6;
+}
+.hero-prize-threshold strong { color: rgba(255,255,255,0.6); }
+
+/* Stats strip below hero */
+.stats {
+  border-top: 1px solid var(--border);
+  padding: 28px 40px; max-width: 1200px; margin: 0 auto;
+  padding-top: 28px;
+}
+
+/* ── PRIZE CARDS ── */
+.prize-section-title {
+  font-size: 18px; font-weight: 800; letter-spacing: -.3px;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+}
+.prize-section-badge {
+  font-size: 11px; font-weight: 600; color: var(--g5);
+  background: var(--g1); border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 100px; letter-spacing: .04em;
+}
+.prize-cards {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px; margin-bottom: 16px;
+}
+.prize-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px 20px; background: var(--white);
+  transition: border-color .15s, transform .15s;
+}
+.prize-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.prize-card-1st {
+  background: var(--black); border-color: var(--black);
+}
+.prize-card-1st:hover { border-color: var(--green); }
+.prize-card-1st .pc-rank { color: rgba(255,255,255,0.45); }
+.prize-card-1st .pc-amount { color: var(--green); }
+.prize-card-1st .pc-sub { color: rgba(255,255,255,0.3); }
+.pc-rank {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--g5); margin-bottom: 10px;
+}
+.pc-amount {
+  font-size: 48px; font-weight: 900; letter-spacing: -2px;
+  line-height: 1; color: var(--black); margin-bottom: 6px;
+}
+.pc-sub { font-size: 12px; color: var(--g5); }
+
+/* Lucky draw callout */
+.lucky-draw-callout {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--gbg); border: 1.5px solid #a3f0b0;
+  border-radius: 12px; gap: 20px; flex-wrap: wrap;
+}
+.ldc-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.ldc-sub { font-size: 12px; color: var(--g5); }
+.ldc-prizes { display: flex; gap: 16px; align-items: center; flex-shrink: 0; }
+.ldc-prize { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.ldc-amt { font-size: 22px; font-weight: 900; letter-spacing: -1px; color: var(--black); }
+.ldc-cnt { font-size: 11px; color: var(--g5); font-weight: 500; }
+
+/* ── MOBILE: hero ── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 0 20px; min-height: auto; gap: 32px; }
+  .hero-copy { padding: 52px 0 0; }
+  .hero-prize-card { margin-bottom: 0; }
+  .hero-prize-amount { font-size: 56px; }
+  .stats { padding: 20px 20px; }
+}
+@media (max-width: 768px) {
+  .prize-cards { grid-template-columns: 1fr; }
+  .pc-amount { font-size: 40px; }
+  .ldc-prizes { gap: 12px; }
+}
+
+
+.fcta-prize-remind {
+  display: inline-block;
+  background: rgba(82,245,100,0.15); border: 1px solid rgba(82,245,100,0.3);
+  color: var(--green); border-radius: 100px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em;
+  padding: 6px 18px; margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.fcta h2 { font-size: clamp(32px, 4vw, 52px); }
+
 </style>
 </head>
 <body>
@@ -503,17 +674,57 @@ footer span { font-size: 13px; color: var(--g5); }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="breadcrumb">Blog <span>/</span> Campaigns <span>/</span> Alpha Arena</div>
-  <h1 data-en="OneKey Perps<br>Alpha Arena" data-zh="OneKey 永续合约<br>Alpha 竞技场">OneKey Perps<br>Alpha Arena</h1>
-  <p class="hero-desc" data-en="A real trading competition — not a simple fee rebate. Leaderboard, missions, and lucky draw running in parallel." data-zh="真实的交易竞赛，不只是手续费返还。排行榜、任务和幸运抽奖同步进行。">A real trading competition — not a simple fee rebate. Leaderboard, missions, and lucky draw running in parallel.</p>
-  <div class="hero-btns">
-    <a href="https://app.onekey.so/perps" class="btn-p" data-en="Start Trading" data-zh="立即交易">Start Trading</a>
-    <a href="#mechanics" class="btn-s" data-en="View Mechanics" data-zh="查看机制">View Mechanics</a>
+  <div class="hero-inner">
+    <!-- Left: copy + CTA -->
+    <div class="hero-copy">
+      <div class="breadcrumb">Blog <span>/</span> Campaigns <span>/</span> Alpha Arena</div>
+      <div class="hero-live-badge"><span class="hero-live-dot"></span> Live — 7 Days Only</div>
+      <h1 data-en="Trade Perps.<br>Win Real Money." data-zh="交易永续合约，<br>赢取真实奖励。">Trade Perps.<br>Win Real Money.</h1>
+      <p class="hero-desc" data-en="Top 20 traders split the prize pool. Complete missions. Enter the lucky draw. No KYC required." data-zh="前20名交易者瓜分奖池。完成任务，参与幸运抽奖。无需 KYC。">Top 20 traders split the prize pool. Complete missions. Enter the lucky draw. No KYC required.</p>
+      <div class="hero-btns">
+        <a href="https://app.onekey.so/perps" class="btn-p btn-p-lg" data-en="Start Trading Now" data-zh="立即开始交易">Start Trading Now</a>
+        <a href="#rewards" class="btn-s" data-en="See Prizes" data-zh="查看奖励">See Prizes →</a>
+      </div>
+      <div class="hero-trust">
+        <span>No KYC</span><span class="hero-trust-dot">·</span>
+        <span>No sign-up</span><span class="hero-trust-dot">·</span>
+        <span>USDC settled</span><span class="hero-trust-dot">·</span>
+        <span>Powered by Hyperliquid</span>
+      </div>
+    </div>
+    <!-- Right: prize highlight -->
+    <div class="hero-prize-card">
+      <div class="hero-prize-label">Total Prize Pool</div>
+      <div class="hero-prize-amount">$195</div>
+      <div class="hero-prize-sub">USDT · Distributed after event</div>
+      <div class="hero-prize-rows">
+        <div class="hero-prize-row">
+          <span class="hpr-rank">🥇 1st Place</span>
+          <span class="hpr-amount">$50</span>
+        </div>
+        <div class="hero-prize-row">
+          <span class="hpr-rank">🥈 2nd – 3rd</span>
+          <span class="hpr-amount">$20 each</span>
+        </div>
+        <div class="hero-prize-row">
+          <span class="hpr-rank">🥉 4th – 5th</span>
+          <span class="hpr-amount">$5 each</span>
+        </div>
+        <div class="hero-prize-row hero-prize-row-draw">
+          <span class="hpr-rank">Lucky Draw</span>
+          <span class="hpr-amount">13 winners</span>
+        </div>
+      </div>
+      <div class="hero-prize-threshold">
+        Min. <strong>$20K</strong> volume for leaderboard &nbsp;·&nbsp; Min. <strong>$150K</strong> for lucky draw
+      </div>
+    </div>
   </div>
+  <!-- bottom stats strip -->
   <div class="stats">
     <div class="stat"><div class="stat-v">$195</div><div class="stat-l" data-en="Total Prize Pool" data-zh="总奖池">Total Prize Pool</div></div>
     <div class="stat"><div class="stat-v">$220K</div><div class="stat-l" data-en="Unlock Threshold" data-zh="解锁门槛">Unlock Threshold</div></div>
-    <div class="stat"><div class="stat-v">3</div><div class="stat-l" data-en="Reward Tracks" data-zh="奖励赛道">Reward Tracks</div></div>
+    <div class="stat"><div class="stat-v">Top 20</div><div class="stat-l" data-en="Traders Win" data-zh="可获奖名次">Traders Win</div></div>
     <div class="stat"><div class="stat-v">7 Days</div><div class="stat-l" data-en="Duration" data-zh="活动时长">Duration</div></div>
   </div>
 </section>
@@ -716,18 +927,35 @@ footer span { font-size: 13px; color: var(--g5); }
     <div class="sec-label" data-en="Prize Distribution" data-zh="奖励分配">Prize Distribution</div>
     <h2 class="sec-title" data-en="Rewards" data-zh="奖励">Rewards</h2>
     <p class="sec-desc">Fixed leaderboard prizes and a lucky draw pool. All rewards distributed after the event ends.</p>
-    <div class="rew-grid">
-      <div class="rew-card">
-        <div class="rew-head"><h3>Leaderboard — Fixed</h3><span class="rew-badge">Top 5 only</span></div>
-        <div class="rew-row"><div><div class="rew-name">1st Place</div><div class="rew-sub">Highest volume</div></div><div class="rew-amt">$50</div></div>
-        <div class="rew-row"><div><div class="rew-name">2nd &ndash; 3rd</div><div class="rew-sub">$20 each</div></div><div class="rew-amt">$40</div></div>
-        <div class="rew-row"><div><div class="rew-name">4th &ndash; 5th</div><div class="rew-sub">$5 each</div></div><div class="rew-amt">$10</div></div>
+    <!-- Leaderboard prizes: big number cards -->
+    <div class="prize-section-title">Leaderboard <span class="prize-section-badge">Top 5 — Fixed</span></div>
+    <div class="prize-cards">
+      <div class="prize-card prize-card-1st">
+        <div class="pc-rank">1st Place</div>
+        <div class="pc-amount">$50</div>
+        <div class="pc-sub">Highest Perps volume</div>
       </div>
-      <div class="rew-card">
-        <div class="rew-head"><h3>Lucky Draw — Probability</h3><span class="rew-badge">13 winners · $150K min</span></div>
-        <div class="rew-row"><div><div class="rew-name">$50 Prize</div><div class="rew-sub">1 winner</div></div><div class="rew-amt">$50</div></div>
-        <div class="rew-row"><div><div class="rew-name">$20 Prize</div><div class="rew-sub">2 winners</div></div><div class="rew-amt">$40</div></div>
-        <div class="rew-row"><div><div class="rew-name">$5 Prize</div><div class="rew-sub">10 winners</div></div><div class="rew-amt">$50</div></div>
+      <div class="prize-card">
+        <div class="pc-rank">2nd – 3rd</div>
+        <div class="pc-amount">$20</div>
+        <div class="pc-sub">each · 2 winners</div>
+      </div>
+      <div class="prize-card">
+        <div class="pc-rank">4th – 5th</div>
+        <div class="pc-amount">$5</div>
+        <div class="pc-sub">each · 2 winners</div>
+      </div>
+    </div>
+    <!-- Lucky draw: separate callout -->
+    <div class="lucky-draw-callout">
+      <div class="ldc-left">
+        <div class="ldc-title">Lucky Draw Pool</div>
+        <div class="ldc-sub">Min. $150,000 Perps volume to qualify · 13 winners drawn</div>
+      </div>
+      <div class="ldc-prizes">
+        <div class="ldc-prize"><span class="ldc-amt">$50</span><span class="ldc-cnt">×1</span></div>
+        <div class="ldc-prize"><span class="ldc-amt">$20</span><span class="ldc-cnt">×2</span></div>
+        <div class="ldc-prize"><span class="ldc-amt">$5</span><span class="ldc-cnt">×10</span></div>
       </div>
     </div>
   </div>
@@ -806,13 +1034,14 @@ footer span { font-size: 13px; color: var(--g5); }
 
 <!-- FOOTER CTA -->
 <div class="fcta">
+  <div class="fcta-prize-remind">$195 USDT Prize Pool · 7 Days · Top 20 Win</div>
   <h2 data-en="Ready to compete?" data-zh="准备好参赛了吗？">Ready to compete?</h2>
   <p data-en="Enter via your KOL invite link. No KYC. No sign-up." data-zh="通过 KOL 邀请链接进入，无需 KYC，无需注册。">Enter via your KOL invite link. No KYC. No sign-up.</p>
   <div class="fcta-btns">
-    <a href="https://app.onekey.so/perps" class="btn-p" data-en="Start Trading" data-zh="立即交易">Start Trading</a>
+    <a href="https://app.onekey.so/perps" class="btn-p btn-p-lg" data-en="Start Trading Now" data-zh="立即开始交易">Start Trading Now</a>
     <a href="https://onekey.so/download" class="btn-s" data-en="Download App" data-zh="下载 App">Download App</a>
   </div>
-  <div class="fcta-note">app.onekey.so/perps &nbsp;&middot;&nbsp; Powered by Hyperliquid L1</div>
+  <div class="fcta-note">app.onekey.so/perps &nbsp;&middot;&nbsp; Powered by Hyperliquid L1 &nbsp;&middot;&nbsp; No KYC</div>
 </div>
 
 <footer>
